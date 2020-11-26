@@ -20,43 +20,36 @@ body{
   margin-top: 35px;
 }
 
-form {
+.content{
+  width: 100%;
+  float: left;
+  height: 45px;
+
+}
+
+.content .form {
   width: 550px;
+  height: 100%;
   max-width: 100%;
   position: relative;
   margin: auto;
 }
 
-form i {
+.content .form i {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 14px;
   left: 15px;
   color: #9D9A98;
   font-size: 14px;
 }
 
-form input[type="text"] {
+.content .form input[type="text"] {
   width: 100%;
   height: 45px;
   background-color: transparent;
   padding: 0 115px 0 35px;
   border: 1px solid #9D9A98;
   border-radius: 3px;
-}
-
-form input[type="submit"] {
-  position: absolute;
-  right: 5px;
-  top: 50%;
-  transform: translateY(-51%);
-  border-radius: 3px;
-  height: 35px;
-  width: 100px;
-  border: 1px solid #557DEA;
-  background-color: #557DEA;
-  color: #fff;
-  cursor: pointer;
 }
 
 .items {
@@ -66,6 +59,7 @@ form input[type="submit"] {
   grid-gap: 15px 15px;
   align-content: center;
   justify-content: center;
+  margin-top: 50px;
 }
 .items .item {
   width: 300px;

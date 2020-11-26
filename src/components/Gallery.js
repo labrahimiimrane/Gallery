@@ -1,29 +1,34 @@
 import React, { Component } from 'react'
-import axios from "axios"
+import PropTypes from 'prop-types'
 
 class Gallery extends Component {
 
-    state = {
-        images : []
-    }
-    
-    componentDidMount() {
-        axios.get("https://pixabay.com/api/?key=19221012-164b9cad7ac65bf4cf31b1543")
-        .then(image => {
-            this.setState({
-                images: image.data.hits
-            })
-        })
-    }
+ 
+
     render() {
-        return (
-            <div className="items">
+        let galleryImage;
+        const {images}=this.props
+        if(images){
+            galleryImage=(
+                <div className="items">
+                    { images.map(gal =>(  
+                        <div className="item" key={gal.id} > 
+                            <img src={gal.largeImageURL} /> 
+                        </div>
+                    ))
+                    }
+                </div>
+            )
+        } else{
+            galleryImage=null;
+        }
 
-                {this.state.images.map(gal =>  <div className="item" key={gal.id} > <img src={gal.largeImageURL} /> </div> )}
-
-            </div>
-        )
+        return galleryImage
     }
+}
+
+Gallery.propTypes={
+    images:PropTypes.array.isRequired
 }
 
 export default Gallery
